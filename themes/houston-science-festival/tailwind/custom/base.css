@@ -1,0 +1,511 @@
+/* CSS reset -- https://andy-bell.co.uk/a-modern-css-reset */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  line-height: 1.5;
+  text-rendering: optimizeSpeed;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Theme related */
+
+:root {
+  --white: #fff;
+  --blue: #202b52;
+  --moonstone: #23b9d3;
+  --gold: #F9B00D;
+  --marquee-width: 100%;
+  --marquee-height: clamp(13rem, 10.571rem + 12.143vw, 30rem);
+  --marquee-elements-displayed: 5;
+  --marquee-element-width: calc(var(--marquee-width) / var(--marquee-elements-displayed));
+  --marquee-animation-duration: calc(var(--marquee-elements) * 3s);
+}
+
+/* Theme's main grid */
+.wrapper {
+  display: grid;
+  grid-template-columns: minmax(1rem, 1fr) repeat(12, minmax(min-content, 9rem)) minmax(1rem, 1fr);
+  grid-auto-rows: auto;
+}
+
+/* Shows the background image when the hamburger icon is clicked */
+.overlay {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  background-image: url("/wp-content/themes/wp-starter-theme/theme/images/header/bg.webp");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: var(--white);
+}
+
+@media (min-width: 64em) {
+  .overlay {
+    display: none;
+  }
+}
+
+/* Prevents scrolling from occuring when mobile menu overlay is visible */
+.no-scroll {
+  overflow: hidden;
+}
+
+/* Background image for footer section */
+@media (max-width: 63.9375em) {
+  .footer {
+    background-image: url("/wp-content/themes/wp-starter-theme/theme/images/footer/shapes--mobile1.5.webp");
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: brightness(90%);
+  }
+}
+
+@media (min-width: 64em) {
+  .footer {
+    background-image: url("/wp-content/themes/wp-starter-theme/theme/images/footer/shapes--desktop2.webp");
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: brightness(90%);
+  }
+}
+
+/* Contact Form 7 */
+.wpcf7-form>p {
+  margin-bottom: 1rem;
+}
+
+.wpcf7-form-control {
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+
+  padding-top: 0.625rem;
+  padding-bottom: 0.625rem;
+}
+
+.wpcf7-form p span input {
+  color: var(--blue);
+  background-color: var(--white);
+  width: 100%;
+}
+
+@media (min-width: 1024px) {
+  .wpcf7-form p span input {
+    width: 282px;
+  }
+}
+
+.wpcf7-form p span textarea {
+  color: var(--blue);
+  max-width: 100%;
+  height: 100px;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  padding-top: 0.625rem;
+  padding-bottom: 0.625rem;
+  margin-bottom: 15px;
+}
+
+@media (min-width: 1024px) {
+  .wpcf7-form p span textarea {
+    height: 171px;
+  }
+}
+
+.wpcf7-form p span input::placeholder, .wpcf7-form p span textarea::placeholder {
+  color: var(--blue);
+}
+
+.wpcf7-submit {
+  font-size: clamp(1rem, 0.9286rem + 0.3571vw, 1.5rem);
+  font-style: normal;
+  font-weight: 700;
+  line-height: 120%;
+  color: var(--blue);
+  border: 2px solid var(--blue);
+  background-color: var(--white);
+  padding: 0.625rem 4.6875rem;
+  max-width: clamp(22rem, 12.2857rem + 48.5714vw, 90rem);
+  margin: 0 auto;
+  transition: all 0.35s ease-in-out;
+}
+
+@media (min-width: 48em) {
+  .wpcf7-submit {
+    display: inline-block;
+    letter-spacing: 0.02rem;
+  }
+}
+
+@media (min-width: 85.375em) {
+  .wpcf7-submit {
+    padding: 0.9375rem 3.125rem;
+  }
+}
+
+.wpcf7-submit:hover {
+  border: 2px solid var(--white);
+  background-color: var(--blue);
+  color: var(--white);
+}
+
+textarea {
+  resize: none;
+  width: 100%;
+}
+
+/* Image slider for exhibitors logos */
+.marquee {
+  width: var(--marquee-width);
+  overflow: hidden;
+  position: relative;
+}
+
+.marquee:before, .marquee:after {
+  position: absolute;
+  top: 0;
+  width: 10rem;
+  height: 100%;
+  content: "";
+  z-index: 1;
+}
+
+.marquee:before {
+  left: 0;
+  background: linear-gradient(to right, var(--blue) 0%, transparent 100%);
+}
+
+.marquee:after {
+  right: 0;
+  background: linear-gradient(to left, var(--blue) 0%, transparent 100%);
+}
+
+.marquee-content {
+  height: 100%;
+  display: flex;
+  animation: scrolling var(--marquee-animation-duration) linear infinite;
+}
+
+@keyframes scrolling {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(calc(-1 * var(--marquee-element-width) * var(--marquee-elements)));
+  }
+}
+
+.marquee-content li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  max-height: 100%;
+  width: var(--marquee-element-width);
+  white-space: nowrap;
+  padding: 0 clamp(0.5rem, 0.143rem + 1.786vw, 3rem);
+}
+
+.marquee-content li img {
+  width: 100%;
+}
+
+.marquee-content:hover {
+  animation-play-state: paused;
+}
+
+@media (max-width: 600px) {
+  :root {
+    --marquee-elements-displayed: 2 !important;
+  }
+
+  .marquee:before, .marquee:after {
+    width: 5rem;
+  }
+
+}
+
+/* FAQ accordian */
+.accordion-item {
+  margin: 1rem 0 6.25rem 0;
+}
+
+.accordion-item-header {
+  min-height: 3.5rem;
+  line-height: 1.25rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  cursor: pointer;
+}
+
+.accordion-item-header.active h2 {
+  color: var(--gold);
+}
+
+.accordion-item-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.25s ease-in-out;
+  margin-top: 2rem;
+
+}
+
+.accordion-item-body-content {
+  margin-bottom: 2rem;
+}
+
+
+/* Advanced Custom Fields */
+
+
+/* Overview sections */
+.overview>div {
+  margin-bottom: clamp(1.25rem, 1.027rem + 1.116vw, 2.813rem);
+}
+
+.overview hr {
+  border-top-width: 2px;
+  border-top-color: var(--moonstone);
+  border-style: solid;
+  margin: 1.5rem auto;
+  width: 5rem;
+}
+
+@media (min-width: 1024px) {
+  .overview hr {
+    width: 8rem;
+  }
+}
+
+.overview h1 {
+  font-size: clamp(1.5rem, 1.143rem + 1.786vw, 4rem);
+  font-style: normal;
+  font-weight: 700;
+  line-height: 120%;
+  letter-spacing: -0.48px;
+  max-width: clamp(19.375rem, 12rem + 36.875vw, 71rem);
+  margin: 0 auto;
+  text-align: center;
+}
+
+.overview h2 {
+  color: var(--moonstone);
+  text-align: center;
+  font-size: clamp(1rem, 0.929rem + 0.357vw, 1.5rem);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 160%;
+  letter-spacing: -0.3px;
+}
+
+@media (min-width: 768px) {
+  .overview h2 {
+    line-height: 120%;
+    letter-spacing: -0.48px;
+  }
+}
+
+.overview p {
+  text-align: center;
+  font-size: clamp(1rem, 0.357vw + 0.929rem, 1.5rem);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 160%;
+}
+
+/* button links */
+.button a {
+  display: flex;
+  max-width: 220px;
+  margin: 0 auto;
+  padding: 10px 30px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  color: var(--blue);
+  border: 2px solid var(--blue);
+  background-color: var(--white);
+  font-size: clamp(0.938rem, 0.857rem + 0.402vw, 1.5rem);
+  font-style: normal;
+  font-weight: 700;
+  line-height: 120%;
+  letter-spacing: 0.32px;
+  transition: all 0.35s ease-in-out;
+}
+
+@media (min-width: 48em) {
+  .button a {
+    padding: 15px 50px;
+    max-width: 330px;
+  }
+}
+
+.button-large a {
+  max-width: 275px;
+  padding: 19px 0;
+}
+
+@media (min-width: 48em) {
+  .button-large a {
+    max-width: 318px;
+  }
+}
+
+@media (min-width: 80em) {
+  .button-large a {
+    max-width: 445px;
+  }
+}
+
+
+.button a:hover {
+  border: 2px solid var(--white);
+  background-color: var(--blue);
+  color: var(--white);
+}
+
+
+/* Volunteer */
+.volunteer h2 {
+  font-size: clamp(1.5rem, 1.357rem + 0.714vw, 2.5rem);
+  text-align: center;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 120%;
+  letter-spacing: -0.48px;
+}
+
+@media (min-width: 768px) {
+  .volunteer h2 {
+    letter-spacing: -0.8px;
+  }
+}
+
+.volunteer h3 {
+  font-size: clamp(1rem, 0.929rem + 0.357vw, 1.5rem);
+  font-style: normal;
+  font-weight: 700;
+  line-height: 120%;
+  letter-spacing: -0.48px;
+  text-align: center;
+  max-width: 649px;
+  margin: 0 auto;
+}
+
+.volunteer p {
+  text-align: center;
+  font-size: clamp(1rem, 0.357vw + 0.929rem, 1.5rem);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 160%;
+}
+
+.volunteer span {
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-align: center;
+  display: block;
+}
+
+
+
+/* for link to location on google map */
+.location {
+  display: inline !important;
+  max-width: auto !important;
+  padding: none !important;
+  color: var(--moonstone) !important;
+  font-size: clamp(1rem, 0.929rem + 0.357vw, 1.5rem) !important;
+  font-style: normal !important;
+  font-weight: 700 !important;
+  line-height: 120% !important;
+  letter-spacing: -0.48px !important;
+  text-align: center !important;
+  max-width: 649px !important;
+  margin: 0 auto !important;
+  border: none !important;
+  background-color: none !important;
+}
+
+.location:hover {
+  border: none !important;
+  background-color: none !important;
+  color: inherit !important;
+}

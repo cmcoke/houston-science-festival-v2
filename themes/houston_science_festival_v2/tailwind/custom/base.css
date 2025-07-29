@@ -2,10 +2,32 @@
  * Custom styles to immediately follow Tailwind’s `base` layer
  */
 
-/**
- * This uses the background and foreground colors declared in the `theme.json`
- * file and is applied both to the front end and in the block editor.
- */
 body {
-	@apply bg-background text-foreground font-sans;
+	@apply font-century-gothic;
+}
+
+/* Shows the background image when the hamburger icon is clicked */
+.overlay {
+	height: 100%;
+	width: 100%;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	background-image: url("/wp-content/themes/wp-starter-theme/theme/images/header/bg.webp");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-color: white;
+}
+
+@media (min-width: 64em) {
+	.overlay {
+		display: none;
+	}
+}
+
+/* Prevents scrolling from occuring when mobile menu overlay is visible */
+.no-scroll {
+	overflow: hidden;
 }

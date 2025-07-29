@@ -8,3 +8,7 @@
  * For esbuild documentation, please see:
  * https://esbuild.github.io/
  */
+
+import MobileMenu from './modules/MobileMenu';
+
+new MobileMenu();

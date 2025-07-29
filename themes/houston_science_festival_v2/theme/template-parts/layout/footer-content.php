@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Template part for displaying the footer content
  *
@@ -11,42 +12,42 @@
 
 <footer id="colophon">
 
-	<?php if ( is_active_sidebar( 'sidebar-1' ) ) : ?>
-		<aside role="complementary" aria-label="<?php esc_attr_e( 'Footer', 'houston_science_festival' ); ?>">
-			<?php dynamic_sidebar( 'sidebar-1' ); ?>
+  <!-- <?php if (is_active_sidebar('sidebar-1')) : ?>
+		<aside role="complementary" aria-label="<?php esc_attr_e('Footer', 'houston_science_festival'); ?>">
+			<?php dynamic_sidebar('sidebar-1'); ?>
 		</aside>
 	<?php endif; ?>
 
-	<?php if ( has_nav_menu( 'menu-2' ) ) : ?>
-		<nav aria-label="<?php esc_attr_e( 'Footer Menu', 'houston_science_festival' ); ?>">
+	<?php if (has_nav_menu('menu-2')) : ?>
+		<nav aria-label="<?php esc_attr_e('Footer Menu', 'houston_science_festival'); ?>">
 			<?php
-			wp_nav_menu(
-				array(
-					'theme_location' => 'menu-2',
-					'menu_class'     => 'footer-menu',
-					'depth'          => 1,
-				)
-			);
-			?>
+      wp_nav_menu(
+        array(
+          'theme_location' => 'menu-2',
+          'menu_class'     => 'footer-menu',
+          'depth'          => 1,
+        )
+      );
+      ?>
 		</nav>
 	<?php endif; ?>
 
 	<div>
 		<?php
-		$houston_science_festival_blog_info = get_bloginfo( 'name' );
-		if ( ! empty( $houston_science_festival_blog_info ) ) :
-			?>
-			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>,
+    $houston_science_festival_blog_info = get_bloginfo('name');
+    if (! empty($houston_science_festival_blog_info)) :
+    ?>
+			<a href="<?php echo esc_url(home_url('/')); ?>" rel="home"><?php bloginfo('name'); ?></a>,
 			<?php
-		endif;
+    endif;
 
-		/* translators: 1: WordPress link, 2: WordPress. */
-		printf(
-			'<a href="%1$s">proudly powered by %2$s</a>.',
-			esc_url( __( 'https://wordpress.org/', 'houston_science_festival' ) ),
-			'WordPress'
-		);
-		?>
-	</div>
+    /* translators: 1: WordPress link, 2: WordPress. */
+    printf(
+      '<a href="%1$s">proudly powered by %2$s</a>.',
+      esc_url(__('https://wordpress.org/', 'houston_science_festival')),
+      'WordPress'
+    );
+      ?>
+	</div> -->
 
 </footer><!-- #colophon -->

@@ -56,5 +56,5 @@
 }
 
 .btn {
-	@apply text-hsf-blue border-hsf-blue hover:bg-hsf-blue mx-auto my-0 flex max-w-[250px] items-center justify-center gap-2.5 border-2 border-solid bg-white px-[30px] py-2.5 text-[clamp(0.938rem,0.857rem_+_0.402vw,1.5rem)] leading-[120%] font-bold tracking-[0.32px] transition-all duration-[0.35s] ease-[ease-in-out] hover:border-2 hover:border-solid hover:border-white hover:text-white min-[768px]:px-[50px] min-[768px]:py-[15px];
+	@apply text-hsf-blue border-hsf-blue hover:bg-hsf-blue mx-auto my-0 flex max-w-[250px] items-center justify-center gap-2.5 rounded-[13px] border-2 border-solid bg-white px-[30px] py-2.5 text-[clamp(0.938rem,0.857rem_+_0.402vw,1.5rem)] leading-[120%] font-bold tracking-[0.32px] transition-all duration-[0.35s] ease-[ease-in-out] hover:border-2 hover:border-solid hover:border-white hover:text-white min-[768px]:px-[50px] min-[768px]:py-[15px];
 }

@@ -45,9 +45,10 @@
 
   <?php wp_body_open(); ?>
 
-  <div id="page">
+  <div id="page" class="flex flex-col min-h-screen">
+
     <a href="#content" class="sr-only"><?php esc_html_e('Skip to content', 'houston_science_festival'); ?></a>
 
     <?php get_template_part('template-parts/layout/header', 'content'); ?>
 
-    <div id="content">
+    <div id="content" class="flex-1">

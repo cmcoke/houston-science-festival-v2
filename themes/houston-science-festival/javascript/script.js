@@ -11,8 +11,8 @@ import MobileMenu from './modules/MobileMenu';
 import Marquee from './modules/Marquee';
 import Accordion from './modules/Accordion';
 
-
-
 new MobileMenu();
 new Marquee();
 new Accordion();
+
+console.log('hi');
